@@ -1,6 +1,3 @@
-// function attachDocumentElements() {
-// }
-
 const pc_doc_refs = {
     // Main character sheets
     NAME: document.getElementById("pc-name"),
@@ -20,7 +17,6 @@ const pc_doc_refs = {
     DEX: document.getElementById("pc-dex"),
     LUC: document.getElementById("pc-luc"),
     // Sidebar stats
-
     sidebar: {
         LVL: document.getElementById("sb-lvl"),
         EXP: document.getElementById("sb-xp-tolvl"),
@@ -30,7 +26,6 @@ const pc_doc_refs = {
         FPcap: document.getElementById("sb-fp-max")
     }
 }
-
 function updateCharacterStat(stat, value, target) {
     switch (target.id) {
         case 'player':
@@ -53,7 +48,6 @@ function updateCharacterStat(stat, value, target) {
             console.log(`updateCharacterStat fail: ${target.id} invalid:`, target);
     }
 }
-
 function modifyStat(stat, value, target) {
     let newValue;
     switch (target.id) {
@@ -74,7 +68,6 @@ function modifyStat(stat, value, target) {
             console.log(`modifyStat fail: ${target.id} invalid:`, target);
     }
 }
-
 function updateLvlDisplay(target) {
     switch (target.id) {
         case 'player':
@@ -84,7 +77,6 @@ function updateLvlDisplay(target) {
             console.log(`updateLvlDisplay fail: ${target.id} invalid:`, target);
     }
 }
-
 function updateExpDisplay(target) {
     switch (target.id) {
         case 'player':
@@ -95,7 +87,6 @@ function updateExpDisplay(target) {
             console.log(`updateExpDisplay fail: ${target.id} invalid:`, target);
     }
 }
-
 function updateSideBar() {
     pc_doc_refs.sidebar.LVL.innerText = data_player.LVL;
     pc_doc_refs.sidebar.EXP.innerText = data_player.EXP.toNext;
@@ -104,7 +95,6 @@ function updateSideBar() {
     pc_doc_refs.sidebar.FP.innerText = data_player.FP;
     pc_doc_refs.sidebar.FPcap.innerText = data_player.FPcap;
 }
-
 function setupGame() {
     pc_doc_refs.NAME.innerText = data_player.name;
     updateCharacterStat('LVL', 0, data_player);
@@ -118,9 +108,5 @@ function setupGame() {
     updateCharacterStat('INT', data_player.attr.INT, data_player);
     updateCharacterStat('DEX', data_player.attr.DEX, data_player);
     updateCharacterStat('LUC', data_player.attr.LUC, data_player);
-    updateLvlDisplay(data_player);
 }
 setupGame();
-
-
-
