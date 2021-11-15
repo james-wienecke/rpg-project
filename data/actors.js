@@ -4,8 +4,11 @@ const actors = [
         "name"      : "skeleton warrior",
         "classes"   : ["monster", "melee"],
         "types"     : ["undead", "anthro"],
+        "LVL"       : 2,
         "HP"        : 10,
+        "HPcap"     : 10,
         "FP"        : 5,
+        "FPcap"     : 7,
         "attr"      : {
             "STR"   : 3,
             "END"   : 2,
@@ -21,8 +24,11 @@ const actors = [
         "name"      : "goblin",
         "classes"   : ["monster", "ranged"],
         "types"     : ["wildkin", "anthro", "short"],
+        "LVL"       : 2,
         "HP"        : 8,
+        "HPcap"     : 8,
         "FP"        : 8,
+        "FPcap"     : 10,
         "attr"      : {
             "STR"   : 1,
             "END"   : 2,

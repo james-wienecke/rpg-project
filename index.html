@@ -40,7 +40,8 @@
 </nav>
 
 <main class="container">
-    <section class="tab-content" id="tab-view">
+    <section id="play-area-row" class="row">
+    <section class="tab-content col-9" id="tab-view">
         <div class="tab-pane show active" id="tab-act" role="tabpanel" aria-labelledby="action-tab">
             <div class="row">
                 <div class="col">
@@ -63,19 +64,27 @@
                         <tr>
                             <th scope="col">Name:</th>
                             <th scope="col" id="pc-name">unset</th>
+                            <th scope="col">Level:</th>
+                            <th scope="col" id="pc-lvl">unset</th>
                         </tr>
                         </thead>
                         <tbody>
                         <tr>
-                            <th scope="row">Level:</th>
-                            <td id="pc-lvl">unset</td>
+                            <th scope="row">Total EXP:</th>
+                            <td id="pc-xp-total">unset</td>
+                            <td> to next LVL:</td>
+                            <td id="pc-xp-tolvl">unset</td>
                         </tr>
                         <tr>
-                            <th scope="row">Health:</th>
+                            <th scope="row">Max Health:</th>
+                            <td id="pc-max-hp">unset</td>
+                            <td>Current Health:</td>
                             <td id="pc-hp">unset</td>
                         </tr>
                         <tr>
-                            <th scope="row">Focus:</th>
+                            <th scope="row">Max Focus:</th>
+                            <td id="pc-max-fp">unset</td>
+                            <td>Current Focus:</td>
                             <td id="pc-fp">unset</td>
                         </tr>
                         <tr>
@@ -116,7 +125,23 @@
                 </div>
             </div>
         </div>
-
+    </section>
+        <section id="sidebar" class="col-3">
+            <ul class="list-group">
+                <li class="list-group-item">
+                    LVL: <span id="sb-lvl">unset</span>
+                </li>
+                <li class="list-group-item">
+                    XP to LVL: <span id="sb-xp-tolvl">unset</span>
+                </li>
+                <li class="list-group-item">
+                    HP: <span id="sb-hp">unset</span>/<span id="sb-hp-max">unset</span>
+                </li>
+                <li class="list-group-item">
+                    FP: <span id="sb-fp">unset</span>/<span id="sb-fp-max">unset</span>
+                </li>
+            </ul>
+        </section>
     </section>
 </main>
 
