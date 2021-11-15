@@ -13,8 +13,8 @@ const pc_doc_refs = {
 }
 
 function updateCharacterStat(stat, value, target) {
-    switch (target) {
-        case 'pc':
+    switch (target.id) {
+        case 'player':
             switch (stat) {
                 case 'HP':
                 case 'FP':
@@ -28,18 +28,43 @@ function updateCharacterStat(stat, value, target) {
             }
             break;
         default:
-            console.log(`updateCharacterStat fail: ${target} invalid:`, target);
+            console.log(`updateCharacterStat fail: ${target.id} invalid:`, target);
+    }
+}
+
+function modifyStat(stat, value, target) {
+    let newValue;
+    switch (target.id) {
+        case 'player':
+            switch (stat) {
+                case 'HP':
+                case 'FP':
+                    newValue = target[stat] += value;
+                    updateCharacterStat(stat, newValue, target);
+                    break;
+                default:
+                    newValue = target['attr'][stat] + value;
+                    updateCharacterStat(stat, newValue, target);
+                    break;
+            }
+
+            break;
+        default:
+            console.log(`modifyStat fail: ${target.id} invalid:`, target);
     }
 }
 
 function setupGame() {
-    updateCharacterStat('HP', data_player.HP, 'pc');
-    updateCharacterStat('FP', data_player.FP, 'pc');
-    updateCharacterStat('STR', data_player.attr.STR, 'pc');
-    updateCharacterStat('END', data_player.attr.END, 'pc');
-    updateCharacterStat('WIL', data_player.attr.WIL, 'pc');
-    updateCharacterStat('INT', data_player.attr.INT, 'pc');
-    updateCharacterStat('DEX', data_player.attr.DEX, 'pc');
-    updateCharacterStat('LUC', data_player.attr.LUC, 'pc');
+    updateCharacterStat('HP', data_player.HP, data_player);
+    updateCharacterStat('FP', data_player.FP, data_player);
+    updateCharacterStat('STR', data_player.attr.STR, data_player);
+    updateCharacterStat('END', data_player.attr.END, data_player);
+    updateCharacterStat('WIL', data_player.attr.WIL, data_player);
+    updateCharacterStat('INT', data_player.attr.INT, data_player);
+    updateCharacterStat('DEX', data_player.attr.DEX, data_player);
+    updateCharacterStat('LUC', data_player.attr.LUC, data_player);
 }
 setupGame();
+
+
+
