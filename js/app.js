@@ -2,6 +2,8 @@
 // }
 
 const pc_doc_refs = {
+    NAME: document.getElementById("pc-name"),
+    LVL: document.getElementById("pc-lvl"),
     HP: document.getElementById("pc-hp"),
     FP: document.getElementById("pc-fp"),
     STR: document.getElementById("pc-str"),
@@ -16,14 +18,23 @@ function updateCharacterStat(stat, value, target) {
     switch (target.id) {
         case 'player':
             switch (stat) {
+                case 'LVL':
+                    let level = 0;
+                    // for (let i = 0; i < target.attr.length; i++) {
+                    //     console.log(target.attr[i], 'level up');
+                    //     level += target.attr[i];
+                    // }
+                    Object.values(target.attr).forEach(val => level += val);
+                    pc_doc_refs[stat].innerText = level;
+                    break;
                 case 'HP':
                 case 'FP':
-                    data_player[stat] = value;
-                    pc_doc_refs[stat].innerText = data_player[stat];
+                    target[stat] = value;
+                    pc_doc_refs[stat].innerText = target[stat];
                     break;
                 default:
-                    data_player.attr[stat] = value;
-                    pc_doc_refs[stat].innerText = data_player.attr[stat];
+                    target.attr[stat] = value;
+                    pc_doc_refs[stat].innerText = target.attr[stat];
                     break;
             }
             break;
@@ -55,6 +66,8 @@ function modifyStat(stat, value, target) {
 }
 
 function setupGame() {
+    pc_doc_refs.NAME.innerText = data_player.name;
+    updateCharacterStat('LVL', 0, data_player);
     updateCharacterStat('HP', data_player.HP, data_player);
     updateCharacterStat('FP', data_player.FP, data_player);
     updateCharacterStat('STR', data_player.attr.STR, data_player);
