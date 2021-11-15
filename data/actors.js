@@ -1,0 +1,36 @@
+const actors = [
+    {
+        "id"        : "enemy",
+        "name"      : "skeleton warrior",
+        "classes"   : ["monster", "melee"],
+        "types"     : ["undead", "anthro"],
+        "HP"        : 10,
+        "FP"        : 5,
+        "attr"      : {
+            "STR"   : 3,
+            "END"   : 2,
+            "WIL"   : 1,
+            "INT"   : 1,
+            "DEX"   : 2,
+            "LUC"   : 1
+        },
+        "factions"  : ["necro", "night-creature"]
+    },
+    {
+        "id"        : "enemy",
+        "name"      : "goblin",
+        "classes"   : ["monster", "ranged"],
+        "types"     : ["wildkin", "anthro", "short"],
+        "HP"        : 8,
+        "FP"        : 8,
+        "attr"      : {
+            "STR"   : 1,
+            "END"   : 2,
+            "WIL"   : 3,
+            "INT"   : 2,
+            "DEX"   : 4,
+            "LUC"   : 2
+        },
+        "factions"  : ["goblin"]
+    }
+]
