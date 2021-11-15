@@ -20,10 +20,6 @@ function updateCharacterStat(stat, value, target) {
             switch (stat) {
                 case 'LVL':
                     let level = 0;
-                    // for (let i = 0; i < target.attr.length; i++) {
-                    //     console.log(target.attr[i], 'level up');
-                    //     level += target.attr[i];
-                    // }
                     Object.values(target.attr).forEach(val => level += val);
                     pc_doc_refs[stat].innerText = level;
                     break;
@@ -56,9 +52,9 @@ function modifyStat(stat, value, target) {
                 default:
                     newValue = target['attr'][stat] + value;
                     updateCharacterStat(stat, newValue, target);
+                    updateCharacterStat('LVL', 0, target);
                     break;
             }
-
             break;
         default:
             console.log(`modifyStat fail: ${target.id} invalid:`, target);
