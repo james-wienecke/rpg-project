@@ -110,3 +110,22 @@ function setupGame() {
     updateCharacterStat('LUC', data_player.attr.LUC, data_player);
 }
 setupGame();
+
+
+// rework begins here
+
+const createEntityDetailsCard = async (entity, tgtElem) => {
+    if (entity.id === 'player') {
+        await fetchPlayerInfo(entity);
+    } else {
+        await fetchEntityInfo(entity);
+    }
+}
+
+const fetchPlayerInfo = async (entity) => {
+
+}
+
+const fetchEntityInfo = async (entity) => {
+
+}
