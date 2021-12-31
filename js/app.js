@@ -129,3 +129,7 @@ const fetchPlayerInfo = async (entity) => {
 const fetchEntityInfo = async (entity) => {
 
 }
+
+const htmlEntityDetailsCard = async (entity, tgtElem) => {
+
+}
