@@ -123,12 +123,29 @@ const createEntityDetailsCard = async (entity, tgtElem) => {
 }
 
 const fetchPlayerInfo = async (entity) => {
-
+    const data = await fetch("data/player.json");
+    return await data.json();
 }
 
-const fetchEntityInfo = async (entity) => {
-
+// the request argument should either be a number (to get by index) or a string (to get by name)
+const fetchEntityInfo = async (request) => {
+    let data = await fetch("data/actors.json");
+    data = await data.json();
+    if (typeof request === 'number') {
+        console.log(data[request]);
+        return data[request];
+    }
+    else {
+        for (let entity of data) {
+            if (request === entity.name) {
+                console.log(entity);
+                return entity;
+            }
+        }
+        console.error('fetchEntityInfo error. malformed request argument?', request);
+    }
 }
+
 
 const htmlEntityDetailsCard = async (entity, tgtElem) => {
 
