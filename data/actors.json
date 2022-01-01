@@ -1,0 +1,42 @@
+[
+  {
+    "id"        : "enemy",
+    "name"      : "skeleton warrior",
+    "classes"   : ["monster", "melee"],
+    "types"     : ["undead", "anthro"],
+    "LVL"       : 2,
+    "HP"        : 10,
+    "HPcap"     : 10,
+    "FP"        : 5,
+    "FPcap"     : 7,
+    "attr"      : {
+      "STR"   : 3,
+      "END"   : 2,
+      "WIL"   : 1,
+      "INT"   : 1,
+      "DEX"   : 2,
+      "LUC"   : 1
+    },
+    "factions"  : ["necro", "night-creature"]
+  },
+  {
+    "id"        : "enemy",
+    "name"      : "goblin",
+    "classes"   : ["monster", "ranged"],
+    "types"     : ["wildkin", "anthro", "short"],
+    "LVL"       : 2,
+    "HP"        : 8,
+    "HPcap"     : 8,
+    "FP"        : 8,
+    "FPcap"     : 10,
+    "attr"      : {
+      "STR"   : 1,
+      "END"   : 2,
+      "WIL"   : 3,
+      "INT"   : 2,
+      "DEX"   : 4,
+      "LUC"   : 2
+    },
+    "factions"  : ["goblin"]
+  }
+]
