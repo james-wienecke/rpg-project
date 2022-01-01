@@ -123,12 +123,15 @@ const createEntityDetailsCard = async (entity, tgtElem) => {
 }
 
 const fetchPlayerInfo = async (entity) => {
-
+    const data = await fetch("data/player.json");
+    console.log(data);
+    return await data.json();
 }
 
 const fetchEntityInfo = async (entity) => {
 
 }
+
 
 const htmlEntityDetailsCard = async (entity, tgtElem) => {
 
