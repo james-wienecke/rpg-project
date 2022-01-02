@@ -53,39 +53,39 @@ const createCharacterStatTable = (entity) => {
             </tr>
             <tr>
                 <th scope="row">Max Health:</th>
-                <td id="pc-max-hp">unset</td>
+                <td id="pc-max-hp">${entity.HPcap}</td>
                 <td>Current Health:</td>
-                <td id="pc-hp">unset</td>
+                <td id="pc-hp">${entity.HP}</td>
             </tr>
             <tr>
                 <th scope="row">Max Focus:</th>
-                <td id="pc-max-fp">unset</td>
+                <td id="pc-max-fp">${entity.FPcap}</td>
                 <td>Current Focus:</td>
-                <td id="pc-fp">unset</td>
+                <td id="pc-fp">${entity.FP}</td>
             </tr>
             <tr>
                 <th scope="row">Strength</th>
-                <td id="pc-str">unset</td>
+                <td id="pc-str">${entity.attr.STR}</td>
             </tr>
             <tr>
                 <th scope="row">Endurance</th>
-                <td id="pc-end">unset</td>
+                <td id="pc-end">${entity.attr.END}</td>
             </tr>
             <tr>
                 <th scope="row">Willpower</th>
-                <td id="pc-wil">unset</td>
+                <td id="pc-wil">${entity.attr.WIL}</td>
             </tr>
             <tr>
                 <th scope="row">Intelligence</th>
-                <td id="pc-int">unset</td>
+                <td id="pc-int">${entity.attr.INT}</td>
             </tr>
             <tr>
                 <th scope="row">Dexterity</th>
-                <td id="pc-dex">unset</td>
+                <td id="pc-dex">${entity.attr.DEX}</td>
             </tr>
             <tr>
                 <th scope="row">Luck</th>
-                <td id="pc-luc">unset</td>
+                <td id="pc-luc">${entity.attr.LUC}</td>
             </tr>
             </tbody>
         </table>`;
