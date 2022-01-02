@@ -1,6 +1,6 @@
 
 
-const createCharacterStatTable = (entity) => {
+const createEntityStatTable = (entity) => {
     /*
 * {
   "id": "player",
@@ -35,16 +35,15 @@ const createCharacterStatTable = (entity) => {
 }
 * */
     let html =
-        `<table class="table table-sm table-hover">
-            <thead>
+        `<thead>
             <tr>
                 <th scope="col">Name:</th>
                 <th scope="col" id="pc-name">${entity.name}</th>
                 <th scope="col">Level:</th>
                 <th scope="col" id="pc-lvl">${entity.LVL}</th>
             </tr>
-            </thead>
-            <tbody>
+        </thead>
+        <tbody>
             <tr>
                 <th scope="row">Total EXP:</th>
                 <td id="pc-xp-total">${entity.EXP.total}</td>
@@ -87,6 +86,14 @@ const createCharacterStatTable = (entity) => {
                 <th scope="row">Luck</th>
                 <td id="pc-luc">${entity.attr.LUC}</td>
             </tr>
-            </tbody>
-        </table>`;
+        </tbody>`;
+
+    //<table class="table table-sm table-hover">
+    const $table = $(document.createElement('table'))
+        .addClass('table table-sm table-hover')
+        .attr('id', `${entity.id}-maxtable`)
+        .append(html)
+        .data('entity', entity);
+
+    return $table;
 }
