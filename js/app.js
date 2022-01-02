@@ -151,10 +151,11 @@ const htmlEntityDetailsCard = async (entity, tgtElem) => {
 
 }
 
-const setupPlayerStats = async () => {
-    let player = await fetchPlayerInfo();
-    $('#character-stats').append(createEntityStatTable(player));
-    console.log('test of entity data storage', $('#player-maxtable').data('entity'));
+const setupPlayerStats = () => {
+    fetchPlayerInfo().then(function (player) {
+        $('#character-stats').append(createEntityStatTable(player));
+        console.log('test of entity data storage', $('#player-maxtable').data('entity'));
+    });
 }
 
 setupPlayerStats();
