@@ -58,63 +58,7 @@
         </div>
         <div class="tab-pane" id="tab-char" role="tabpanel" aria-labelledby="character-tab">
             <div class="row">
-                <div class="col">
-                    <table class="table table-sm table-hover">
-                        <thead>
-                        <tr>
-                            <th scope="col">Name:</th>
-                            <th scope="col" id="pc-name">unset</th>
-                            <th scope="col">Level:</th>
-                            <th scope="col" id="pc-lvl">unset</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <th scope="row">Total EXP:</th>
-                            <td id="pc-xp-total">unset</td>
-                            <td> to next LVL:</td>
-                            <td id="pc-xp-tolvl">unset</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Max Health:</th>
-                            <td id="pc-max-hp">unset</td>
-                            <td>Current Health:</td>
-                            <td id="pc-hp">unset</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Max Focus:</th>
-                            <td id="pc-max-fp">unset</td>
-                            <td>Current Focus:</td>
-                            <td id="pc-fp">unset</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Strength</th>
-                            <td id="pc-str">unset</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Endurance</th>
-                            <td id="pc-end">unset</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Willpower</th>
-                            <td id="pc-wil">unset</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Intelligence</th>
-                            <td id="pc-int">unset</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Dexterity</th>
-                            <td id="pc-dex">unset</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Luck</th>
-                            <td id="pc-luc">unset</td>
-                        </tr>
-                        </tbody>
-                    </table>
-                    <button onclick="modifyStat('HP', -2, data_player)" name="damage">PC takes 2 damage</button>
-                    <button onclick="modifyStat('STR', 5, data_player)" name="gain-strength">PC gains 5 strength</button>
+                <div class="col" id="character-stats">
                 </div>
             </div>
         </div>
@@ -145,15 +89,15 @@
     </section>
 </main>
 
-<footer class="container">
+<section class="container" id="game-log">
     log
-</footer>
+</section>
 
 
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 <!-- Bootstrap 4.5 JS -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
         crossorigin="anonymous"></script>
@@ -161,6 +105,7 @@
 <script src="data/actors.js"></script>
 <script src="data/pc.js"></script>
 
+<script src="js/html-control.js"></script>
 <script src="js/app.js"></script>
 </body>
 </html>
