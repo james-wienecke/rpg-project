@@ -109,7 +109,7 @@ function setupGame() {
     updateCharacterStat('DEX', data_player.attr.DEX, data_player);
     updateCharacterStat('LUC', data_player.attr.LUC, data_player);
 }
-setupGame();
+//setupGame();
 
 
 // rework begins here
@@ -150,3 +150,11 @@ const fetchEntityInfo = async (request) => {
 const htmlEntityDetailsCard = async (entity, tgtElem) => {
 
 }
+
+const setupPlayerStats = async () => {
+    let player = await fetchPlayerInfo();
+    $('#character-stats').append(createEntityStatTable(player));
+    console.log('test of entity data storage', $('#player-maxtable').data('entity'));
+}
+
+setupPlayerStats();
