@@ -137,9 +137,16 @@ const buildActionButtons = (actions) => {
     let actionButtons = [];
     for (let action of actions) {
         const $button = $(document.createElement('button'))
-            .addClass('btn btn-secondary entity-action-btn')
+            .text(action.name.toLocaleUpperCase())
+            .addClass('btn btn-secondary entity-action-btn mx-1')
             .attr('id', `act-${action.name}`)
             .data('action', action);
+
+        $button.on('click', function (e) {
+            e.preventDefault();
+            console.log($(this).data('action').name);
+        });
+
         actionButtons.push($button);
     }
     return actionButtons;
