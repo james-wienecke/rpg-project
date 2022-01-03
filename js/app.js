@@ -155,6 +155,7 @@ const setupPlayerStats = () => {
     fetchPlayerInfo().then(function (player) {
         $('#character-stats').append(createEntityStatTable(player));
         //console.log('test of entity data storage', $('#player-maxtable').data('entity'));
+        enableActionButtons(player.actions);
     });
 }
 
