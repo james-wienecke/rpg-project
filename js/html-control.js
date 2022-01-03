@@ -131,3 +131,16 @@ const createEntityCardBrief = (entity) => {
 
     return $table;
 }
+
+const buildActionButtons = (actions) => {
+    // button class="btn btn-secondary entity-action-btn" id="act-atk">Attack</button>
+    let actionButtons = [];
+    for (let action of actions) {
+        const $button = $(document.createElement('button'))
+            .addClass('btn btn-secondary entity-action-btn')
+            .attr('id', `act-${action.name}`)
+            .data('action', action);
+        actionButtons.push($button);
+    }
+    return actionButtons;
+}

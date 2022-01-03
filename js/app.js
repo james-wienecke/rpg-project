@@ -164,5 +164,10 @@ const displayEntityCard = (entity) => {
     });
 }
 
+const enableActionButtons = (actions) => {
+    const $parent = $('#act-actions')
+    $parent.append(buildActionButtons(actions));
+}
+
 setupPlayerStats();
 displayEntityCard(0);
