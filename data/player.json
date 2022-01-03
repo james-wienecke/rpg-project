@@ -27,5 +27,45 @@
   },
   "factions": [
     ""
+  ],
+  "actions": [
+    {
+      "name": "attack",
+      "type": "basic",
+      "attr": ["STR", "DEX"],
+      "multiplier": 1.0
+    },
+    {
+      "name": "defend",
+      "type": "basic",
+      "attr": ["END", "WIL"],
+      "multiplier": 1.0
+    },
+    {
+      "name": "skills",
+      "type": "complex",
+      "skills": [
+        {
+          "name": "whirlwind strike",
+          "cost": 6,
+          "attr": ["STR", "WIL", "DEX"],
+          "multiplier": 1.25,
+          "effect": "raw"
+        },
+        {
+          "name": "pommel strike",
+          "cost": 10,
+          "attr": ["STR", "WIL", "DEX"],
+          "multiplier": 0.85,
+          "effect": "stun"
+        }
+      ]
+    },
+    {
+      "name": "retreat",
+      "type": "basic",
+      "attr": ["INT", "LUC"],
+      "multiplier": 0
+    }
   ]
 }
