@@ -151,10 +151,24 @@ const htmlEntityDetailsCard = async (entity, tgtElem) => {
 
 }
 
-const setupPlayerStats = async () => {
-    let player = await fetchPlayerInfo();
-    $('#character-stats').append(createEntityStatTable(player));
-    console.log('test of entity data storage', $('#player-maxtable').data('entity'));
+const setupPlayerStats = () => {
+    fetchPlayerInfo().then(function (player) {
+        $('#character-stats').append(createEntityStatTable(player));
+        //console.log('test of entity data storage', $('#player-maxtable').data('entity'));
+        enableActionButtons(player.actions);
+    });
+}
+
+const displayEntityCard = (entity) => {
+    fetchEntityInfo(entity).then(function (entity) {
+        $('#npc-card').append(createEntityCardBrief(entity));
+    });
+}
+
+const enableActionButtons = (actions) => {
+    const $parent = $('#act-actions')
+    $parent.append(buildActionButtons(actions));
 }
 
 setupPlayerStats();
+displayEntityCard(0);

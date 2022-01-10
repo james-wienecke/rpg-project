@@ -97,3 +97,57 @@ const createEntityStatTable = (entity) => {
 
     return $table;
 }
+
+const createEntityCardBrief = (entity) => {
+    const html =
+        `<thead>
+            <tr>
+                <th scope="col">Name:</th>
+                <th scope="col" id="pc-name">${entity.name}</th>
+                <th scope="col">Level:</th>
+                <th scope="col" id="pc-lvl">${entity.LVL}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">Max Health:</th>
+                <td id="pc-max-hp">${entity.HPcap}</td>
+                <td>Current Health:</td>
+                <td id="pc-hp">${entity.HP}</td>
+            </tr>
+            <tr>
+                <th scope="row">Max Focus:</th>
+                <td id="pc-max-fp">${entity.FPcap}</td>
+                <td>Current Focus:</td>
+                <td id="pc-fp">${entity.FP}</td>
+            </tr>
+        </tbody>`;
+
+    const $table = $(document.createElement('table'))
+        .addClass('table table-sm table-hover')
+        .attr('id', `${entity.id}-mintable`)
+        .append(html)
+        .data('entity', entity);
+
+    return $table;
+}
+
+const buildActionButtons = (actions) => {
+    // button class="btn btn-secondary entity-action-btn" id="act-atk">Attack</button>
+    let actionButtons = [];
+    for (let action of actions) {
+        const $button = $(document.createElement('button'))
+            .text(action.name.toLocaleUpperCase())
+            .addClass('btn btn-secondary entity-action-btn mx-1')
+            .attr('id', `act-${action.name}`)
+            .data('action', action);
+
+        $button.on('click', function (e) {
+            e.preventDefault();
+            console.log($(this).data('action').name);
+        });
+
+        actionButtons.push($button);
+    }
+    return actionButtons;
+}
